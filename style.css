@@ -277,14 +277,21 @@ footer p { font-size: 0.88rem; color: rgba(144, 144, 184, 0.6); }
   .hero-buttons .btn { width: 100%; padding: 0.7rem 1.25rem; font-size: 0.8rem; }
   .grid-2 { grid-template-columns: 1fr; }
   
-  /* Fine Navbar Refinement */
-  .navbar { padding: 0.6rem 0 !important; }
-  .logo { font-size: 1.15rem !important; }
-  .hero { padding-top: 40px !important; } 
-  html { scroll-padding-top: 60px !important; }
+  /* Fine Navbar Refinement - The Golden Ratio */
+  .navbar { 
+    padding: 0.8rem 0 !important; 
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    background: rgba(13, 13, 35, 0.85) !important;
+    border-bottom: 1px solid rgba(165, 180, 252, 0.2) !important;
+  }
+  .logo { font-size: 1.25rem !important; }
+  .logo span { color: #a5b4fc !important; } /* Brighter Electric Violet */
+  .hero { padding-top: 55px !important; } 
+  html { scroll-padding-top: 75px !important; }
   
   /* Emergency Performance Pass */
-  .glass-card, .navbar {
+  .glass-card {
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
     background: rgba(15, 15, 35, 0.95) !important;
