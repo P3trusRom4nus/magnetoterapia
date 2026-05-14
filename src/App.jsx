@@ -18,17 +18,7 @@ function App() {
     return () => clearTimeout(timer);
   }, []);
 
-  const handleScroll = (e, id) => {
-    e.preventDefault();
-    const target = document.getElementById(id);
-    if (target) {
-      const offsetTop = target.getBoundingClientRect().top + window.pageYOffset - 80;
-      window.scrollTo({
-        top: offsetTop,
-        behavior: 'smooth'
-      });
-    }
-  };
+
 
 
 
@@ -100,10 +90,10 @@ function App() {
         <div className="container">
           <div className="logo">Magnetoterapia <span style={{ color: 'var(--accent)' }}>Web</span></div>
           <ul className="nav-links">
-            <li><a href="#beneficios" onClick={(e) => handleScroll(e, 'beneficios')}>Beneficios</a></li>
-            <li><a href="#equipos" onClick={(e) => handleScroll(e, 'equipos')}>Equipos</a></li>
-            <li><a href="#contacto" onClick={(e) => handleScroll(e, 'contacto')}>Contacto</a></li>
-            <li><a href="#contacto" className="btn btn-outline" style={{ padding: '0.5rem 1rem' }} onClick={(e) => handleScroll(e, 'contacto')}>Alquilar Ahora</a></li>
+            <li><a href="#beneficios">Beneficios</a></li>
+            <li><a href="#equipos">Equipos</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+            <li><a href="#contacto" className="btn btn-outline" style={{ padding: '0.5rem 1rem' }}>Alquilar Ahora</a></li>
           </ul>
         </div>
       </nav>
@@ -124,8 +114,8 @@ function App() {
               Tratamiento efectivo y no invasivo para dolor crónico, lesiones deportivas y recuperación post-operatoria. Equipos de alta potencia ahora disponibles para uso domiciliario.
             </motion.p>
             <motion.div className="hero-buttons" variants={heroBloom}>
-              <a href="#contacto" className="btn btn-primary" onClick={(e) => handleScroll(e, 'contacto')}>Consultar Alquiler</a>
-              <a href="#equipos" className="btn btn-outline" onClick={(e) => handleScroll(e, 'equipos')}>Ver Equipos</a>
+              <a href="#contacto" className="btn btn-primary">Consultar Alquiler</a>
+              <a href="#equipos" className="btn btn-outline">Ver Equipos</a>
             </motion.div>
           </motion.div>
         </div>
@@ -194,7 +184,7 @@ function App() {
                 <li><CheckCircle2 size={18} /> Incluye 2 bobinas planas</li>
                 <li><CheckCircle2 size={18} /> Emisión continua</li>
               </ul>
-              <a href="#contacto" className="btn btn-outline" style={{ width: '100%' }} onClick={(e) => handleScroll(e, 'contacto')}>Consultar</a>
+              <a href="#contacto" className="btn btn-outline" style={{ width: '100%' }}>Consultar</a>
             </motion.div>
 
             {/* Equipo 2 */}
@@ -216,7 +206,7 @@ function App() {
                 <li><CheckCircle2 size={18} /> Emisión continua y pulsante</li>
                 <li><CheckCircle2 size={18} /> 2 bobinas planas + 1 envolvente</li>
               </ul>
-              <a href="#contacto" className="btn btn-outline" style={{ width: '100%' }} onClick={(e) => handleScroll(e, 'contacto')}>Consultar</a>
+              <a href="#contacto" className="btn btn-outline" style={{ width: '100%' }}>Consultar</a>
             </motion.div>
 
             {/* Equipo 3 */}
@@ -238,7 +228,7 @@ function App() {
                 <li><CheckCircle2 size={18} /> 3 frecuencias y formas de onda</li>
                 <li><CheckCircle2 size={18} /> Máxima versatilidad terapéutica</li>
               </ul>
-              <a href="#contacto" className="btn btn-outline" style={{ width: '100%' }} onClick={(e) => handleScroll(e, 'contacto')}>Consultar</a>
+              <a href="#contacto" className="btn btn-outline" style={{ width: '100%' }}>Consultar</a>
             </motion.div>
 
             {/* Equipo 4 */}
@@ -260,7 +250,7 @@ function App() {
                 <li><CheckCircle2 size={18} /> Ideal para articulaciones</li>
                 <li><CheckCircle2 size={18} /> Compatible con MTB2/4 y 4000</li>
               </ul>
-              <a href="#contacto" className="btn btn-outline" style={{ width: '100%' }} onClick={(e) => handleScroll(e, 'contacto')}>Consultar</a>
+              <a href="#contacto" className="btn btn-outline" style={{ width: '100%' }}>Consultar</a>
             </motion.div>
           </div>
         </div>

@@ -32,6 +32,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 80px;
 }
 
 body {
@@ -236,8 +237,9 @@ section {
 
 .hero-content {
   max-width: 820px;
-  z-index: 2;
+  z-index: 10;
   position: relative;
+  pointer-events: auto;
 }
 
 .hero p {
