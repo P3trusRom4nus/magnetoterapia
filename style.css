@@ -267,15 +267,24 @@ footer p { font-size: 0.88rem; color: rgba(144, 144, 184, 0.6); }
 /* ── Responsive ── */
 @media (max-width: 768px) {
   .nav-links { display: none; }
-  h1 { font-size: 2.1rem; line-height: 1.1; margin-bottom: 1rem; }
-  h2 { font-size: 1.8rem; margin-bottom: 1.5rem; }
-  section { padding: 3.5rem 0; }
-  .hero { min-height: 80vh; padding-top: 60px; }
-  .hero p { font-size: 0.95rem; line-height: 1.5; }
-  .container { padding: 0 1.25rem; }
-  .hero-buttons { flex-direction: column; gap: 0.75rem; }
-  .hero-buttons .btn { width: 100%; padding: 0.75rem 1.5rem; }
+  h1 { font-size: 1.85rem; line-height: 1.1; margin-bottom: 0.85rem; }
+  h2 { font-size: 1.6rem; margin-bottom: 1.25rem; }
+  section { padding: 2.5rem 0; }
+  .hero { min-height: 70vh; padding-top: 50px; display: flex; align-items: center; }
+  .hero p { font-size: 0.9rem; line-height: 1.4; margin-bottom: 1.5rem; }
+  .container { padding: 0 1rem; }
+  .hero-buttons { flex-direction: column; gap: 0.6rem; }
+  .hero-buttons .btn { width: 100%; padding: 0.7rem 1.25rem; font-size: 0.8rem; }
   .grid-2 { grid-template-columns: 1fr; }
+  
+  /* Emergency Performance Pass */
+  .glass-card, .navbar {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: rgba(15, 15, 35, 0.95) !important;
+  }
+  .hero-bg-glow { display: none !important; }
+  .loading-screen .hero-bg-glow { display: block !important; } /* Keep it only for loading */
   
   /* --- CTA Mobile Extreme Condensation --- */
   .cta-section-viewport {
