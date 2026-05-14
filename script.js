@@ -59,18 +59,44 @@ document.addEventListener('DOMContentLoaded', () => {
         revealObserver.observe(el);
     });
 
-    // The "Sherlock" Gatekeeper: 
-    // Prevents simulators from reloading on hash changes while keeping CSS smooth scroll.
+    // --- The Master Smooth Scroll Engine ---
+    // Manually handles frame-by-frame scrolling for maximum stability and premium feel.
+    function animateScroll(targetId) {
+        const target = document.querySelector(targetId);
+        if (!target) return;
+
+        const navHeight = 80;
+        const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
+        const startPosition = window.pageYOffset;
+        const distance = targetPosition - startPosition;
+        const duration = 1200; // ms
+        let start = null;
+
+        function step(timestamp) {
+            if (!start) start = timestamp;
+            const progress = timestamp - start;
+            const t = Math.min(progress / duration, 1);
+            
+            // Premium Ease Out Quint curve
+            const ease = 1 - Math.pow(1 - t, 5);
+            
+            window.scrollTo(0, startPosition + distance * ease);
+
+            if (progress < duration) {
+                window.requestAnimationFrame(step);
+            }
+        }
+
+        window.requestAnimationFrame(step);
+    }
+
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             const targetId = this.getAttribute('href');
             if (targetId === '#' || targetId === '') return;
             
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                e.preventDefault(); // Stop the simulator from 'resetting' (reloading)
-                targetElement.scrollIntoView(); // Native CSS 'scroll-behavior: smooth' still applies!
-            }
+            e.preventDefault(); // Stop simulator resets
+            animateScroll(targetId);
         });
     });
 });
