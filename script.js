@@ -59,6 +59,18 @@ document.addEventListener('DOMContentLoaded', () => {
         revealObserver.observe(el);
     });
 
-    // Native CSS 'scroll-behavior: smooth' handles all anchor links perfectly.
-    // Removed JS scrollIntoView helper to prevent engine conflicts.
+    // The "Sherlock" Gatekeeper: 
+    // Prevents simulators from reloading on hash changes while keeping CSS smooth scroll.
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const targetId = this.getAttribute('href');
+            if (targetId === '#' || targetId === '') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                e.preventDefault(); // Stop the simulator from 'resetting' (reloading)
+                targetElement.scrollIntoView(); // Native CSS 'scroll-behavior: smooth' still applies!
+            }
+        });
+    });
 });
