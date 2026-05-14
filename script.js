@@ -17,21 +17,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('load', () => {
         setTimeout(() => {
-            // Start fade out and reveal hero simultaneously
+            // Step 1: Start the slow fade out
             loader.style.opacity = '0';
-            loader.style.pointerEvents = 'none'; // Ensure no overlap blocking
+            loader.style.pointerEvents = 'none'; 
             
-            // Trigger hero animation immediately for a seamless cross-fade
-            document.querySelectorAll('.hero .reveal-up').forEach(el => {
-                el.classList.add('visible');
-            });
-            // Also trigger floating widget
-            const widget = document.querySelector('.whatsapp-widget');
-            if (widget) widget.classList.add('visible');
-
             setTimeout(() => {
+                // Step 2: Only after the fade is done, remove loader and trigger site
                 loader.style.display = 'none';
-            }, 1500); // Wait for the slow fade to finish before removing from DOM
+                
+                document.querySelectorAll('.hero .reveal-up').forEach(el => {
+                    el.classList.add('visible');
+                });
+                // Also trigger floating widget
+                const widget = document.querySelector('.whatsapp-widget');
+                if (widget) widget.classList.add('visible');
+            }, 1500); // The precise duration of the CSS transition
         }, 2200); 
     });
 
