@@ -66,18 +66,25 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!target) return;
 
         const navHeight = 80;
-        const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
+        const viewportHeight = window.innerHeight;
+        const targetRect = target.getBoundingClientRect();
+        
+        // Calculate the position to center the target in the viewport
+        // (Target Top + Half its height) - Half the viewport height
+        let targetPosition = (targetRect.top + window.pageYOffset) - (viewportHeight / 2) + (targetRect.height / 2);
+        
+        // Ensure we don't scroll past the top of the page
+        targetPosition = Math.max(targetPosition, 0);
+
         const startPosition = window.pageYOffset;
         const distance = targetPosition - startPosition;
-        const duration = 1200; // ms
+        const duration = 1200;
         let start = null;
 
         function step(timestamp) {
             if (!start) start = timestamp;
             const progress = timestamp - start;
             const t = Math.min(progress / duration, 1);
-            
-            // Premium Ease Out Quint curve
             const ease = 1 - Math.pow(1 - t, 5);
             
             window.scrollTo(0, startPosition + distance * ease);

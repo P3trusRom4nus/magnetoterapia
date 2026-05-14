@@ -202,7 +202,13 @@ section { padding: 7rem 0; }
 .stat-sub { font-size: 0.82rem; margin-bottom: 0; }
 
 /* ── CTA ── */
-.cta-section-viewport { min-height: 100dvh; display: flex; align-items: center; padding: 4rem 0; }
+.cta-section-viewport {
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0; /* Removed padding to allow perfect flex centering */
+}
 .cta-heading { margin-bottom: 1rem; }
 .cta-subheading { text-align: center; max-width: 500px; margin: 0 auto 2.5rem; font-size: 1.1rem; }
 .cta-steps-container { display: flex; justify-content: center; gap: 3rem; margin-bottom: 2.5rem; flex-wrap: wrap; }
