@@ -27,8 +27,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Also trigger floating widget
                 const widget = document.querySelector('.whatsapp-widget');
                 if (widget) widget.classList.add('visible');
-            }, 800);
-        }, 1800); // Cinematic duration
+            }, 1500); // Wait for the 1.5s slow fade
+        }, 2200); // Intentional cinematic delay
     });
 
     // --- Reveal on Scroll (Intersection Observer) ---
