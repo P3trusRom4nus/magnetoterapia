@@ -1,13 +1,257 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Magnetoterapia Web - Alquiler de Equipos Profesionales</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magnetoterapia Web — Alquiler de Equipos Profesionales</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+    <!-- ── Loading Overlay ── -->
+    <div id="loader" class="loading-screen">
+        <div class="hero-bg-glow" style="animation-duration: 3s;"></div>
+        <div class="loader-content reveal-instant">
+            <div class="premium-spinner"></div>
+            <p class="loader-text">CARGANDO DATOS...</p>
+        </div>
+    </div>
+
+    <!-- ── Navbar ── -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">Magnetoterapia <span style="color: var(--accent);">Web</span></div>
+            <ul class="nav-links">
+                <li><a href="#beneficios">Beneficios</a></li>
+                <li><a href="#equipos">Equipos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#contacto" class="btn btn-outline" style="padding: 0.5rem 1rem;">Alquilar Ahora</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ── Hero ── -->
+    <section id="inicio" class="section hero">
+        <div class="hero-bg-glow"></div>
+        <div class="container">
+            <div class="hero-content stagger-reveal">
+                <h1 class="reveal-up">Alquiler de Equipos Profesionales de <span style="color: var(--accent);">Magnetoterapia</span></h1>
+                <p class="reveal-up">Tratamiento efectivo y no invasivo para dolor crónico, lesiones deportivas y recuperación post-operatoria. Equipos de alta potencia ahora disponibles para uso domiciliario.</p>
+                <div class="hero-buttons reveal-up">
+                    <a href="#contacto" class="btn btn-primary">Consultar Alquiler</a>
+                    <a href="#equipos" class="btn btn-outline">Ver Equipos</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── Beneficios ── -->
+    <section id="beneficios" class="section section-alt">
+        <div class="container">
+            <div class="stagger-reveal">
+                <h2 class="reveal-up">Beneficios del Tratamiento</h2>
+                <div class="grid-3">
+                    <div class="glass-card reveal-up">
+                        <i data-lucide="heart" class="icon-accent"></i>
+                        <h3>Alivio del Dolor</h3>
+                        <p>Efectivo para dolor crónico, artritis, fibromialgia, dolor de espalda, cervical y lumbar. Reduce la inflamación de forma natural.</p>
+                    </div>
+                    
+                    <div class="glass-card reveal-up">
+                        <i data-lucide="activity" class="icon-accent"></i>
+                        <h3>Recuperación Acelerada</h3>
+                        <p>Ideal para fracturas, esguinces, lesiones musculares y post-operatorios. Estimula la regeneración ósea y de tejidos blandos.</p>
+                    </div>
+                    
+                    <div class="glass-card reveal-up">
+                        <i data-lucide="zap" class="icon-accent"></i>
+                        <h3>Mejora la Circulación</h3>
+                        <p>Tratamiento para problemas circulatorios, edemas, úlceras venosas y várices. Optimiza el flujo sanguíneo y la oxigenación celular.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── Equipos ── -->
+    <section id="equipos" class="section">
+        <div class="container">
+            <h2 class="reveal-up">Nuestros Equipos</h2>
+            
+            <div class="grid-4 stagger-reveal">
+                <!-- Equipo 1 -->
+                <div class="glass-card reveal-up">
+                    <div class="equipment-image-placeholder">
+                        <img src="images/MTB2-BASIC.png" alt="MTB2-BASIC">
+                    </div>
+                    <h3>MTB2-BASIC</h3>
+                    <p>Equipo profesional de alto rendimiento con potencia máxima de 200 gauss. Ideal para tratamientos localizados en articulaciones y zonas específicas.</p>
+                    <ul class="features-list">
+                        <li><i data-lucide="check-circle-2"></i> 2 salidas independientes</li>
+                        <li><i data-lucide="check-circle-2"></i> Incluye 2 bobinas planas</li>
+                        <li><i data-lucide="check-circle-2"></i> Emisión continua</li>
+                    </ul>
+                    <a href="#contacto" class="btn btn-outline" style="width: 100%;">Consultar</a>
+                </div>
+
+                <!-- Equipo 2 -->
+                <div class="glass-card reveal-up">
+                    <div class="equipment-image-placeholder">
+                        <img src="images/MTB2-4.png" alt="MTB2/4">
+                    </div>
+                    <h3>MTB2/4</h3>
+                    <p>Magnetoterapia de baja frecuencia y alta potencia con 4 salidas. Perfecto para tratamientos integrales y zonas amplias del cuerpo.</p>
+                    <ul class="features-list">
+                        <li><i data-lucide="check-circle-2"></i> 4 salidas: 5-200 Gauss</li>
+                        <li><i data-lucide="check-circle-2"></i> Emisión continua y pulsante</li>
+                        <li><i data-lucide="check-circle-2"></i> 2 bobinas planas + 1 envolvente</li>
+                    </ul>
+                    <a href="#contacto" class="btn btn-outline" style="width: 100%;">Consultar</a>
+                </div>
+
+                <!-- Equipo 3 -->
+                <div class="glass-card reveal-up">
+                    <div class="equipment-image-placeholder">
+                        <img src="images/MBT4000.png" alt="MTB4000">
+                    </div>
+                    <h3>MTB4000</h3>
+                    <p>Equipo profesional de máxima potencia con salida auxiliar para bobina corporal. La solución más completa para tratamientos intensivos.</p>
+                    <ul class="features-list">
+                        <li><i data-lucide="check-circle-2"></i> Salida para bobina corporal</li>
+                        <li><i data-lucide="check-circle-2"></i> 3 frecuencias y formas de onda</li>
+                        <li><i data-lucide="check-circle-2"></i> Máxima versatilidad terapéutica</li>
+                    </ul>
+                    <a href="#contacto" class="btn btn-outline" style="width: 100%;">Consultar</a>
+                </div>
+
+                <!-- Equipo 4 -->
+                <div class="glass-card reveal-up">
+                    <div class="equipment-image-placeholder">
+                        <img src="images/CAMPO_ENVOLVENTE.png" alt="Bobina de Campo Envolvente">
+                    </div>
+                    <h3>Bobina Envolvente</h3>
+                    <p>Accesorio especializado para tratamientos en extremidades completas. Envuelve rodillas, tobillos o codos con un campo de 360 grados.</p>
+                    <ul class="features-list">
+                        <li><i data-lucide="check-circle-2"></i> Cobertura completa</li>
+                        <li><i data-lucide="check-circle-2"></i> Ideal para articulaciones</li>
+                        <li><i data-lucide="check-circle-2"></i> Compatible con MTB2/4 y 4000</li>
+                    </ul>
+                    <a href="#contacto" class="btn btn-outline" style="width: 100%;">Consultar</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── SECCIÓN REMATADORA ── -->
+    <section class="section-alt">
+        <div class="container">
+            <div class="stagger-reveal">
+                <h2 class="reveal-up">¿Por Qué Alquilar?</h2>
+                <p class="reveal-up" style="text-align: center; max-width: 600px; margin: 0 auto 3rem; font-size: 1.1rem; line-height: 1.75;">
+                    Los equipos profesionales de magnetoterapia pueden costar miles de dólares. El alquiler te da acceso a la misma tecnología de clínica sin la inversión.
+                </p>
+
+                <div class="grid-4">
+                    <div class="glass-card reveal-up" style="text-align: center; padding: 2rem 1.5rem;">
+                        <div class="stat-number">$0</div>
+                        <p class="stat-label">Inversión Inicial</p>
+                        <p class="stat-sub">Sin compra, sin compromiso a largo plazo</p>
+                    </div>
+
+                    <div class="glass-card reveal-up" style="text-align: center; padding: 2rem 1.5rem;">
+                        <div class="stat-number">24hs</div>
+                        <p class="stat-label">Entrega Rápida</p>
+                        <p class="stat-sub">Coordinamos la entrega en tu domicilio</p>
+                    </div>
+
+                    <div class="glass-card reveal-up" style="text-align: center; padding: 2rem 1.5rem;">
+                        <div class="stat-number">200G</div>
+                        <p class="stat-label">Alta Potencia</p>
+                        <p class="stat-sub">Equipos de grado clínico, no domésticos</p>
+                    </div>
+
+                    <div class="glass-card reveal-up" style="text-align: center; padding: 2rem 1.5rem;">
+                        <div class="stat-number">100%</div>
+                        <p class="stat-label">Soporte Incluido</p>
+                        <p class="stat-sub">Asesoramiento y asistencia técnica</p>
+                    </div>
+                </div>
+
+                <div class="reveal-up" style="text-align: center; max-width: 650px; margin: 3rem auto 0;">
+                    <p style="font-family: 'DM Sans', sans-serif; font-size: clamp(1.4rem, 2.5vw, 1.8rem); color: var(--text-main); font-weight: 300; line-height: 1.5; letter-spacing: -0.01em; margin-bottom: 0.75rem;">
+                        "Trátese desde su casa, con la misma tecnología que usan los profesionales."
+                    </p>
+                    <p style="font-size: 0.85rem; margin-bottom: 0;">
+                        Miles de pacientes ya eligieron el alquiler como la forma más inteligente de acceder a la magnetoterapia profesional.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── Contacto ── -->
+    <section id="contacto" class="section section-alt cta-section-viewport">
+        <div class="container" style="height: 100%; display: flex; align-items: center; justify-content: center;">
+            <div class="glass-card reveal-up" style="max-width: 700px; margin: 0 auto; text-align: center;">
+                <h2 class="cta-heading reveal-up">Contáctenos</h2>
+                <p class="cta-subheading reveal-up">
+                    Escribinos por WhatsApp y recibí asesoramiento gratuito y personalizado de la mano de un profesional en kinesiología, que te ayudará a encontrar el equipo ideal para tu caso.
+                </p>
+
+                <div class="cta-steps-container stagger-reveal">
+                    <div class="cta-step reveal-up">
+                        <div class="cta-step-icon">
+                            <i data-lucide="message-circle" class="icon-accent"></i>
+                        </div>
+                        <p class="cta-step-title">1. Cuéntenos su caso</p>
+                        <p class="cta-step-desc">Dolencia o lesión</p>
+                    </div>
+                    <div class="cta-step reveal-up">
+                        <div class="cta-step-icon">
+                            <i data-lucide="check-circle-2" class="icon-accent"></i>
+                        </div>
+                        <p class="cta-step-title">2. Lo asesoramos</p>
+                        <p class="cta-step-desc">Equipo ideal para usted</p>
+                    </div>
+                    <div class="cta-step reveal-up">
+                        <div class="cta-step-icon">
+                            <i data-lucide="zap" class="icon-accent"></i>
+                        </div>
+                        <p class="cta-step-title">3. Entrega rápida</p>
+                        <p class="cta-step-desc">En su domicilio</p>
+                    </div>
+                </div>
+
+                <a href="https://wa.me/5491132530414?text=Hola,%20quisiera%20información%20sobre%20el%20alquiler%20de%20equipos%20de%20magnetoterapia" 
+                   target="_blank" rel="noreferrer" class="btn-whatsapp-cta reveal-up">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width: 22px; height: 22px; fill: white; flex-shrink: 0;">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                    </svg>
+                    Chateá con nosotros por WhatsApp
+                </a>
+
+                <p class="reveal-up" style="margin-top: 1.5rem; font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0;">
+                    Lun–Vie 9:00–18:00 · Sáb 9:00–13:00 · Respuesta inmediata
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Magnetoterapia Web. Todos los derechos reservados.</p>
+            <p style="font-size: 0.85rem;">Equipos de uso profesional bajo indicación médica.</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/5491132530414" class="whatsapp-widget reveal-instant" target="_blank" rel="noreferrer" aria-label="Chat on WhatsApp">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+        </svg>
+    </a>
+
+    <script src="script.js"></script>
+</body>
 </html>
