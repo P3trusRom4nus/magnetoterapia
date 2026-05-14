@@ -6,17 +6,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Loading Screen ---
     const loader = document.getElementById('loader');
+    const loaderContent = document.querySelector('.loader-content');
+    
+    // Immediately show loader content
+    if (loaderContent) {
+        setTimeout(() => {
+            loaderContent.classList.add('visible');
+        }, 100);
+    }
+
     window.addEventListener('load', () => {
         setTimeout(() => {
             loader.style.opacity = '0';
             setTimeout(() => {
                 loader.style.display = 'none';
-                // Trigger hero animation after load
-                document.querySelectorAll('.hero .reveal-up, .hero .reveal-instant').forEach(el => {
+                // Trigger hero animation after loader is gone
+                document.querySelectorAll('.hero .reveal-up').forEach(el => {
                     el.classList.add('visible');
                 });
+                // Also trigger floating widget
+                const widget = document.querySelector('.whatsapp-widget');
+                if (widget) widget.classList.add('visible');
             }, 800);
-        }, 1500); // Cinematic wait
+        }, 1800); // Cinematic duration
     });
 
     // --- Reveal on Scroll (Intersection Observer) ---
