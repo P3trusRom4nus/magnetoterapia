@@ -17,18 +17,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('load', () => {
         setTimeout(() => {
+            // Start fade out and reveal hero simultaneously
             loader.style.opacity = '0';
+            loader.style.pointerEvents = 'none'; // Ensure no overlap blocking
+            
+            // Trigger hero animation immediately for a seamless cross-fade
+            document.querySelectorAll('.hero .reveal-up').forEach(el => {
+                el.classList.add('visible');
+            });
+            // Also trigger floating widget
+            const widget = document.querySelector('.whatsapp-widget');
+            if (widget) widget.classList.add('visible');
+
             setTimeout(() => {
                 loader.style.display = 'none';
-                // Trigger hero animation after loader is gone
-                document.querySelectorAll('.hero .reveal-up').forEach(el => {
-                    el.classList.add('visible');
-                });
-                // Also trigger floating widget
-                const widget = document.querySelector('.whatsapp-widget');
-                if (widget) widget.classList.add('visible');
-            }, 1500); // Wait for the 1.5s slow fade
-        }, 2200); // Intentional cinematic delay
+            }, 1500); // Wait for the slow fade to finish before removing from DOM
+        }, 2200); 
     });
 
     // --- Reveal on Scroll (Intersection Observer) ---
