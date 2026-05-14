@@ -171,7 +171,12 @@ section { padding: 7rem 0; }
 
 /* ── Grids ── */
 .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-.grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
+.grid-4 { 
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+  gap: 1.5rem; 
+}
+#equipos .container { max-width: 1400px; } /* Hyper-Wide Expansion */
 .grid-4 .glass-card { padding: 1.5rem; display: flex; flex-direction: column; }
 .grid-4 .glass-card .btn { margin-top: auto; }
 
