@@ -266,6 +266,58 @@ footer p { font-size: 0.88rem; color: rgba(144, 144, 184, 0.6); }
   .hero-buttons { flex-direction: column; }
   .hero-buttons .btn { width: 100%; }
   .grid-2 { grid-template-columns: 1fr; }
-  .cta-section-viewport { padding-top: 5rem; }
-  .cta-steps-container { gap: 1rem; }
+  
+  /* --- CTA Mobile Condensation --- */
+  .cta-section-viewport {
+    padding: 2rem 0;
+    min-height: 100dvh;
+    padding-top: 5rem;
+  }
+  .cta-section-viewport .glass-card {
+    padding: 1.5rem 1rem;
+    width: 100%;
+  }
+  .cta-heading {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+  }
+  .cta-subheading {
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+  }
+  .cta-steps-container {
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    justify-content: space-between;
+  }
+  .cta-step {
+    flex: 1;
+  }
+  .cta-step-icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 0.5rem;
+  }
+  .cta-step-icon i {
+    width: 20px !important;
+    height: 20px !important;
+  }
+  .cta-step-title {
+    font-size: 0.75rem;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+  }
+  .cta-step-desc {
+    display: none;
+  }
+  .btn-whatsapp-cta {
+    padding: 0.8rem 1rem;
+    font-size: 0.9rem;
+    width: 100%;
+  }
+  .cta-section-viewport p:last-child {
+    font-size: 0.75rem;
+    margin-top: 1rem !important;
+  }
 }
