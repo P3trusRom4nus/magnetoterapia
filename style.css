@@ -267,9 +267,14 @@ footer p { font-size: 0.88rem; color: rgba(144, 144, 184, 0.6); }
 /* ── Responsive ── */
 @media (max-width: 768px) {
   .nav-links { display: none; }
-  h1 { font-size: 2.8rem; }
-  .hero-buttons { flex-direction: column; }
-  .hero-buttons .btn { width: 100%; }
+  h1 { font-size: 2.1rem; line-height: 1.1; margin-bottom: 1rem; }
+  h2 { font-size: 1.8rem; margin-bottom: 1.5rem; }
+  section { padding: 3.5rem 0; }
+  .hero { min-height: 80vh; padding-top: 60px; }
+  .hero p { font-size: 0.95rem; line-height: 1.5; }
+  .container { padding: 0 1.25rem; }
+  .hero-buttons { flex-direction: column; gap: 0.75rem; }
+  .hero-buttons .btn { width: 100%; padding: 0.75rem 1.5rem; }
   .grid-2 { grid-template-columns: 1fr; }
   
   /* --- CTA Mobile Extreme Condensation --- */
