@@ -66,24 +66,11 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!target) return;
 
         const navHeight = window.innerWidth <= 768 ? 60 : 80;
-        const viewportHeight = window.innerHeight;
         const targetRect = target.getBoundingClientRect();
         const absoluteTargetTop = targetRect.top + window.pageYOffset;
         
-        let targetPosition;
-        
-        // Intelligent Centering:
-        // If the section is a 'Giant' (taller than the viewport), land at the top.
-        // Otherwise, center it perfectly for that premium cinematic feel.
-        if (targetRect.height > viewportHeight * 0.85) {
-            targetPosition = absoluteTargetTop - navHeight - 20; // 20px extra breathing room
-        } else {
-            targetPosition = absoluteTargetTop - (viewportHeight / 2) + (targetRect.height / 2);
-        }
-        
-        // Ensure we don't scroll past the top of the page
-        targetPosition = Math.max(targetPosition, 0);
-
+        // Surgical Top-Landing
+        const targetPosition = Math.max(absoluteTargetTop - navHeight, 0);
         const startPosition = window.pageYOffset;
         const distance = targetPosition - startPosition;
         const duration = 1200;
