@@ -13,7 +13,7 @@
   --glass-bg:     rgba(13, 13, 35, 0.75);
   --glass-border: rgba(129, 140, 248, 0.12);
   --glass-shadow: 0 16px 48px rgba(0, 0, 0, 0.6);
-  --transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  --transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease, border-color 0.4s ease, background-color 0.4s ease;
 }
 
 *, *::before, *::after {
@@ -31,9 +31,8 @@ body {
   font-family: 'DM Sans', sans-serif;
   background-color: var(--primary);
   background-image:
-    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(99, 102, 241, 0.18) 0%, transparent 60%),
-    radial-gradient(ellipse 60% 40% at 80% 100%,  rgba(129, 140, 248, 0.12) 0%, transparent 55%),
-    radial-gradient(ellipse 100% 80% at 50% 50%,  rgba(67, 56, 202, 0.04) 0%, transparent 70%);
+    radial-gradient(circle at 20% -10%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 100%, rgba(129, 140, 248, 0.1) 0%, transparent 50%);
   color: var(--text-main);
   line-height: 1.65;
   overflow-x: hidden;
@@ -106,11 +105,19 @@ section { padding: 7rem 0; scroll-margin-top: 80px; }
   background: var(--glass-bg);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
+}
+
+@media (max-width: 768px) {
+  .glass-card {
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+  }
+}
   border: 1px solid var(--glass-border);
   border-radius: 16px;
   padding: 2.25rem;
-  box-shadow: var(--glass-shadow);
-  transition: border-color 0.4s ease, box-shadow 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  transition: border-color 0.4s ease, box-shadow 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.4s ease;
   position: relative;
   overflow: hidden;
 }
@@ -154,8 +161,9 @@ section { padding: 7rem 0; scroll-margin-top: 80px; }
 .hero-bg-glow {
   position: absolute; top: 45%; right: 5%; width: 600px; height: 600px;
   background: radial-gradient(circle, rgba(99, 102, 241, 0.2) 0%, transparent 70%);
-  border-radius: 50%; transform: translateY(-50%); z-index: 1; filter: blur(80px);
-  pointer-events: none; animation: pulse-glow 6s ease-in-out infinite alternate;
+  border-radius: 50%; transform: translateY(-50%);  z-index: 1; filter: blur(60px);
+  pointer-events: none; animation: pulse-glow 8s ease-in-out infinite alternate;
+  will-change: transform, opacity;
 }
 
 @keyframes pulse-glow {
@@ -233,7 +241,6 @@ footer p { font-size: 0.88rem; color: rgba(144, 144, 184, 0.6); }
   opacity: 0;
   transform: translateY(35px);
   transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: opacity, transform;
 }
 .reveal-up.visible {
   opacity: 1;
