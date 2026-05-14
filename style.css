@@ -268,10 +268,10 @@ footer p { font-size: 0.88rem; color: rgba(144, 144, 184, 0.6); }
 @media (max-width: 768px) {
   .nav-links { display: none; }
   
-  /* Cinematic Hero & Global Scale */
-  h1 { font-size: clamp(1.75rem, 8vw, 2rem); line-height: 1.1; margin-bottom: 1rem; }
+  /* Cinematic Hero & Global Scale - Premium Enlargement */
+  h1 { font-size: clamp(2rem, 9vw, 2.4rem); line-height: 1.1; margin-bottom: 1.25rem; }
   h2 { font-size: 1.6rem; margin-bottom: 1.25rem; }
-  section { padding: 3rem 0; }
+  section { padding: 3.5rem 0; }
   .hero { 
     min-height: 90dvh; 
     padding-top: 100px !important; 
@@ -279,10 +279,10 @@ footer p { font-size: 0.88rem; color: rgba(144, 144, 184, 0.6); }
     flex-direction: column;
     justify-content: center; 
   }
-  .hero p { font-size: 0.95rem; line-height: 1.5; margin-bottom: 1.5rem; }
-  .container { padding: 0 1.25rem; }
-  .hero-buttons { flex-direction: column; gap: 0.6rem; }
-  .hero-buttons .btn { width: 100%; padding: 0.75rem 1.25rem; font-size: 0.85rem; }
+  .hero p { font-size: 1.05rem; line-height: 1.55; margin-bottom: 2.25rem; }
+  .container { padding: 0 1.5rem; }
+  .hero-buttons { flex-direction: column; gap: 0.85rem; }
+  .hero-buttons .btn { width: 100%; padding: 0.9rem 1.75rem; font-size: 0.9rem; }
   .grid-2 { grid-template-columns: 1fr; }
   
   /* Fine Navbar Refinement - The Golden Ratio */
